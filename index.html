@@ -62,7 +62,7 @@ section{padding:92px 0}
 .head{text-align:center;max-width:680px;margin:0 auto 52px}
 .head h2{font-size:clamp(1.7rem,3.2vw,2.6rem);color:var(--navy);margin-top:8px}
 #cards{padding:0 50px 92px}
-.svc{display:grid;grid-template-columns:1.15fr 1fr 1.15fr;min-height:580px;box-shadow:0 10px 34px rgba(11,34,57,.1)}
+.svc{display:grid;grid-template-columns:1.15fr 1fr 1.15fr;min-height:700px;box-shadow:0 10px 34px rgba(11,34,57,.1)}
 .svc+.svc{margin-top:50px}
 .svc .ph{position:relative;overflow:hidden;background:#dbe6ea;min-height:420px}
 .svc .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
@@ -71,14 +71,14 @@ section{padding:92px 0}
 .svc .ph:first-child b{left:22px}.svc .ph:last-child b{right:22px}
 .svc .mid{background:#fff;display:flex;flex-direction:column;justify-content:center;text-align:center}
 .svc:nth-child(even) .mid{background:var(--ice)}
-.svc .it{flex:1 1 0;min-height:0;cursor:pointer;transition:background .35s;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 8%}
+.svc .it{flex:1 1 auto;min-height:350px;cursor:pointer;transition:background .35s;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 7%}
 .svc .it+.it{border-top:1px solid #d3e1e6}
 .num{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;font:800 1rem 'Montserrat';letter-spacing:.1em;padding:7px 16px;margin-bottom:16px;border-bottom:3px solid var(--teal)}
 .num i{font-style:normal;color:var(--teal);font-size:.8rem}
 .svc h3{color:var(--navy);font-size:1.2rem;margin-bottom:10px}
 .svc .it p{color:var(--mute);font-size:.95rem;margin-bottom:20px;max-width:420px}
 .rev{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease,opacity .4s ease;display:flex;flex-direction:column;align-items:center}
-.it.on .rev{max-height:260px;opacity:1}
+.it.on .rev{max-height:420px;opacity:1}
 .it.on{background:#fff}.svc:nth-child(even) .it.on{background:#fff}
 .it h3{transition:color .3s}.it.on h3{color:var(--teal-d)}
 .cp{position:absolute;left:0;right:0;bottom:0;z-index:2;background:#fff;color:var(--navy);font:700 .95rem 'Montserrat';padding:16px 22px;text-align:center;border-top:4px solid var(--teal);transition:.3s}
@@ -131,12 +131,26 @@ footer li{list-style:none;margin-bottom:6px}footer a:hover{color:var(--teal)}
 @media(max-width:620px){#cards{padding:0 20px 64px}.svc+.svc{margin-top:28px}section{padding:64px 0}.tgrid,.row{grid-template-columns:1fr}.arrow{display:none}.about .photo img{height:300px}.top .wrap{justify-content:center}form{padding:26px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
-@media(max-width:1280px){nav{gap:20px}.svc{min-height:540px}}
+@media(max-width:1280px){nav{gap:20px}.svc{min-height:660px}}
 @media(max-width:1100px){nav a{font-size:.74rem;letter-spacing:.05em}nav{gap:16px}.about .grid{gap:36px}}
 @media(max-width:960px){:root{--hh:88px}.svc .it{padding:28px 6%}.diy{background-attachment:scroll}.about .photo:before{display:none}}
 @media(max-width:620px){:root{--hh:76px;--tb:auto}.top{font-size:.78rem}.top .wrap{gap:4px 14px}.stat b{font-size:2rem}.stat{padding:22px 8px}.stats{gap:12px;margin-top:40px}.head{margin-bottom:34px}.flogo img{height:76px}.dots{bottom:12px}.svc .ph{min-height:260px}.svc .ph:last-child b{left:22px}.t{padding:34px 24px}.ci{gap:14px}.ico{flex-basis:46px;height:46px}.slider{min-height:300px;height:56vh;height:56svh}}
 @media(max-width:400px){.g-recaptcha{transform:scale(.86);transform-origin:0 0;margin-bottom:0}.btn{padding:12px 20px}.wrap{padding:0 18px}#cards{padding:0 14px 56px}.stats{grid-template-columns:1fr 1fr}}
 @media(max-height:480px) and (orientation:landscape){.slider{height:calc(100vh - 70px);min-height:260px}}
+
+@media(max-width:960px){
+.svc{display:flex;flex-direction:column;min-height:0}
+.svc .mid{display:contents}
+.svc .ph:first-child{order:1}.svc .it:first-of-type{order:2}.svc .ph:last-child{order:3}.svc .it:last-of-type{order:4}
+.svc .ph{min-height:0;height:340px;flex:none}
+.svc .it{min-height:0;flex:none;padding:34px 8%;background:#fff;border-top:0}
+.svc .it:last-of-type{background:var(--ice)}
+.svc .it+.it{border-top:0}
+.svc .cp{display:none}
+.svc .rev,.it.on .rev{max-height:none;opacity:1;overflow:visible}
+.svc .ph:first-child b,.svc .ph:last-child b{left:18px;right:auto}
+}
+@media(max-width:620px){.svc .ph{height:260px}.svc .it{padding:28px 20px}.svc .it p{font-size:.92rem}.svc .btn{width:100%;max-width:320px;text-align:center}}
 </style>
 </head>
 <body>

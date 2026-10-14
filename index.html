@@ -55,9 +55,9 @@ section{padding:92px 0}
 .about .photo img{width:100%;height:440px;object-fit:cover;border-radius:3px;box-shadow:0 18px 40px rgba(11,34,57,.2)}
 .about .photo:before{content:"";position:absolute;right:-16px;bottom:-16px;width:60%;height:60%;border:4px solid var(--teal);z-index:-1}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
-.stat{background:var(--navy);color:#fff;text-align:center;padding:30px 14px;border-bottom:4px solid var(--teal)}
-.stat b{display:block;font:800 2.6rem 'Montserrat';color:var(--teal)}
-.stat span{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+.stat{background:var(--navy);color:#fff;display:flex;align-items:center;gap:20px;padding:28px 24px;border-bottom:4px solid var(--teal);text-align:left;perspective:600px}
+.stat b{display:block;font:800 2.3rem/1.1 'Montserrat';color:#fff}
+.stat span{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:#bcd2db;display:block;margin-top:4px}
 /* 3 services */
 .head{text-align:center;max-width:680px;margin:0 auto 52px}
 .head h2{font-size:clamp(1.7rem,3.2vw,2.6rem);color:var(--navy);margin-top:8px}
@@ -135,6 +135,21 @@ footer li{list-style:none;margin-bottom:6px}footer a:hover{color:var(--teal)}
 .ov h3{color:var(--navy);font-size:1.2rem}.ov p{color:var(--mute);font-size:.95rem;flex:1}
 }
 @media(max-width:760px){#cards{grid-template-columns:1fr;padding:0 20px 64px;gap:26px}.sc>img{height:240px}.ov .btn{width:100%;max-width:320px;text-align:center}}
+
+/* 3D icons */
+.si{--c1:#4cc3d6;--c2:#12808e;flex:0 0 84px;width:84px;height:84px;border-radius:22px;display:grid;place-items:center;position:relative;
+background:linear-gradient(145deg,var(--c1),var(--c2));
+box-shadow:inset 3px 3px 6px rgba(255,255,255,.55),inset -6px -8px 12px rgba(0,0,0,.28),0 14px 18px -4px rgba(0,0,0,.55),0 4px 0 var(--c2);
+transform:rotateX(14deg) rotateY(-16deg);transform-style:preserve-3d;transition:transform .5s ease}
+.si:before{content:"";position:absolute;inset:6px 6px auto 6px;height:42%;border-radius:16px 16px 40px 40px;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0))}
+.si svg{width:44px;height:44px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(3px 5px 3px rgba(0,0,0,.4));transform:translateZ(22px);position:relative}
+.stat:hover .si{transform:rotateX(0) rotateY(0) translateY(-4px)}
+.stat:nth-child(1) .si{--c1:#ec4f86;--c2:#b3144f}
+.stat:nth-child(2) .si{--c1:#ffc15e;--c2:#e08a10}
+.stat:nth-child(3) .si{--c1:#a6d95a;--c2:#5f9a1e}
+.stat:nth-child(4) .si{--c1:#4cc3f0;--c2:#1479b5}
+@media(max-width:620px){.stats{grid-template-columns:1fr}.stat{padding:22px 20px}.si{flex-basis:72px;width:72px;height:72px;border-radius:19px}.si svg{width:38px;height:38px}.stat b{font-size:2rem}}
+@media(min-width:621px) and (max-width:1100px){.si{flex-basis:70px;width:70px;height:70px}.si svg{width:36px;height:36px}.stat{gap:16px;padding:24px 18px}.stat b{font-size:2rem}}
 </style>
 </head>
 <body>
@@ -161,10 +176,10 @@ footer li{list-style:none;margin-bottom:6px}footer a:hover{color:var(--teal)}
 <div class="photo reveal"><img loading="lazy" src="https://customshowerscreens.com.au/wp-content/uploads/2017/09/IMG_0185.jpg" alt="Finished frameless shower screen installation in Melbourne"></div>
 </div>
 <div class="stats">
-<div class="stat reveal"><b data-n="30">0</b><span>Years of Experience</span></div>
-<div class="stat reveal"><b data-n="4000">0</b><span>Shower Screens Installed</span></div>
-<div class="stat reveal"><b data-n="400">0</b><span>Glass Pool Fencing Installed</span></div>
-<div class="stat reveal"><b data-n="3000">0</b><span>Splashbacks Installed</span></div>
+<div class="stat reveal"><div class="si"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="m8.5 12.5-1.5 8.5 5-3 5 3-1.5-8.5"/></svg></div><b data-n="30">0</b><span>Years of Experience</span></div>
+<div class="stat reveal"><div class="si"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V8a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4"/><path d="M3 8h4M12 13v.01M9 16v.01M12 19v.01M15 16v.01M15 13v.01"/></svg></div><b data-n="4000">0</b><span>Shower Screens Installed</span></div>
+<div class="stat reveal"><div class="si"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V9M9 20V9M13 20V9M17 20V9M3 9h18M3 5h18"/></svg></div><b data-n="400">0</b><span>Glass Pool Fencing Installed</span></div>
+<div class="stat reveal"><div class="si"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></div><b data-n="3000">0</b><span>Splashbacks Installed</span></div>
 </div></div></section>
 <!-- 3. SERVICES -->
 <section id="services" style="padding-bottom:0"><div class="wrap"><div class="head reveal"><span class="eyebrow">/ Our Services</span><h2>Glass Solutions Built For Your Home</h2></div></div>

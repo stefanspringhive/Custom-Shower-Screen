@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom Shower Screens | Frameless Showers, Splashbacks & Pool Fencing Melbourne</title>
+<meta name="description" content="Custom frameless shower screens, glass splashbacks and glass pool fencing across Melbourne. 30 years experience. Call Rolf Walther 0425 830 221.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<style>
+:root{--navy:#0b2239;--teal:#1aa6b7;--teal-d:#12808e;--ice:#eef6f8;--ink:#1d2b38;--mute:#5d6b78;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);line-height:1.65;background:#fff}
+h1,h2,h3,.btn,nav a{font-family:'Montserrat',Arial,sans-serif}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{color:var(--teal);font:700 .8rem 'Montserrat';letter-spacing:.2em;text-transform:uppercase}
+.btn{display:inline-block;background:var(--teal);color:#fff;padding:13px 28px;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;border:0;cursor:pointer;border-radius:2px;transition:.25s}
+.btn:hover{background:var(--teal-d);transform:translateY(-2px)}
+.btn.ghost{background:transparent;border:2px solid #fff}.btn.ghost:hover{background:#fff;color:var(--navy)}
+/* top bar + nav */
+.top{background:var(--navy);color:#cfe3ea;font-size:.85rem}
+.top .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.top a:hover{color:#fff}
+header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.08)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font:800 1.25rem 'Montserrat';color:var(--navy);letter-spacing:.02em}.logo span{color:var(--teal)}
+nav{display:flex;gap:28px;align-items:center}
+nav a{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--navy)}
+nav a:hover{color:var(--teal)}
+.burger{display:none;background:none;border:0;font-size:1.8rem;color:var(--navy);cursor:pointer}
+/* 1 slider */
+.slider{position:relative;height:78vh;min-height:460px;background:var(--navy);overflow:hidden}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 7s ease}
+.slide.on img{transform:scale(1)}
+.slider:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,34,57,.35),rgba(11,34,57,.75));pointer-events:none}
+.cap{position:absolute;z-index:3;left:0;right:0;bottom:16%;color:#fff;text-align:center;padding:0 24px}
+.cap h1{font-size:clamp(1.8rem,4.6vw,3.6rem);font-weight:800;line-height:1.15;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.4)}
+.cap p{margin:14px 0 26px;font-size:1.1rem;opacity:.92}
+.cap .btn+.btn{margin-left:10px}
+.arrow{position:absolute;z-index:4;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,.7);background:rgba(11,34,57,.35);color:#fff;font-size:1.4rem;cursor:pointer;transition:.2s}
+.arrow:hover{background:var(--teal);border-color:var(--teal)}
+.prev{left:20px}.next{right:20px}
+.dots{position:absolute;z-index:4;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:9px}
+.dots button{width:11px;height:11px;border-radius:50%;border:0;background:rgba(255,255,255,.5);cursor:pointer;padding:0}
+.dots button.on{background:var(--teal);transform:scale(1.3)}
+/* 2 about */
+section{padding:92px 0}
+.about{background:var(--ice)}
+.about .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.about h2{font-size:clamp(1.7rem,3.2vw,2.6rem);color:var(--navy);line-height:1.2;margin:10px 0 18px}
+.about p{color:var(--mute);margin-bottom:14px}
+.about .photo{position:relative}
+.about .photo img{width:100%;height:440px;object-fit:cover;border-radius:3px;box-shadow:0 18px 40px rgba(11,34,57,.2)}
+.about .photo:before{content:"";position:absolute;right:-16px;bottom:-16px;width:60%;height:60%;border:4px solid var(--teal);z-index:-1}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.stat{background:var(--navy);color:#fff;text-align:center;padding:30px 14px;border-bottom:4px solid var(--teal)}
+.stat b{display:block;font:800 2.6rem 'Montserrat';color:var(--teal)}
+.stat span{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+/* 3 services */
+.head{text-align:center;max-width:680px;margin:0 auto 52px}
+.head h2{font-size:clamp(1.7rem,3.2vw,2.6rem);color:var(--navy);margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{background:#fff;box-shadow:0 8px 28px rgba(11,34,57,.1);display:flex;flex-direction:column;transition:.3s;border-radius:3px;overflow:hidden}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 38px rgba(11,34,57,.18)}
+.card .im{height:230px;overflow:hidden;background:#dbe6ea}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover img{transform:scale(1.07)}
+.card .tx{padding:26px;display:flex;flex-direction:column;flex:1}
+.card h3{color:var(--navy);font-size:1.12rem;margin-bottom:10px}
+.card p{color:var(--mute);font-size:.94rem;flex:1;margin-bottom:20px}
+.card .btn{align-self:flex-start}
+/* diy band */
+.diy{background:linear-gradient(rgba(11,34,57,.88),rgba(11,34,57,.88)),url(https://customshowerscreens.com.au/wp-content/uploads/2017/09/IMG_0174.jpg) center/cover fixed;color:#fff;text-align:center;padding:84px 0}
+.diy h2{font-size:clamp(1.5rem,3vw,2.3rem);margin-bottom:14px}
+.diy p{font-size:1.2rem;font-style:italic;margin-bottom:28px;opacity:.9}
+/* 4 testimonials */
+.testi{background:var(--ice)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.t{background:#fff;padding:38px 30px;border-top:4px solid var(--teal);box-shadow:0 8px 24px rgba(11,34,57,.08);position:relative}
+.t:before{content:"\201C";font:800 5rem 'Montserrat';color:var(--teal);opacity:.25;position:absolute;top:2px;left:20px;line-height:1}
+.stars{color:#f5b301;letter-spacing:3px;margin-bottom:12px}
+.t p{font-style:italic;margin-bottom:18px;position:relative}
+.t strong{font-family:'Montserrat';color:var(--navy);font-size:.9rem}
+.t small{display:block;color:var(--mute)}
+/* 5 contact */
+.contact{background:var(--navy);color:#fff}
+.cgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.contact h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin:8px 0 16px}
+.contact .lead{color:#bcd2db;margin-bottom:32px}
+.ci{display:flex;gap:18px;align-items:flex-start;margin-bottom:26px}
+.ico{flex:0 0 52px;height:52px;border-radius:50%;background:var(--teal);display:grid;place-items:center}
+.ico svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ci h4{font:700 .78rem 'Montserrat';letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:2px}
+.ci a:hover{color:var(--teal)}
+form{background:#fff;color:var(--ink);padding:38px;border-radius:3px}
+form h3{color:var(--navy);margin-bottom:20px}
+.f{margin-bottom:16px}
+label{display:block;font:600 .78rem 'Montserrat';letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;color:var(--navy)}
+input,textarea{width:100%;padding:13px 14px;border:1px solid #cbd7dd;font:inherit;border-radius:2px;background:#f8fbfc}
+input:focus,textarea:focus{outline:2px solid var(--teal);border-color:var(--teal);background:#fff}
+textarea{min-height:130px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+#msg{margin-top:14px;font-weight:600;font-size:.92rem}
+.ok{color:#127a3a}.er{color:#c0392b}
+footer{background:#071626;color:#9fb6c1;font-size:.88rem;padding:46px 0 22px}
+.fg{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:28px}
+footer h4{color:#fff;font:700 .85rem 'Montserrat';letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+footer li{list-style:none;margin-bottom:6px}footer a:hover{color:var(--teal)}
+.copy{border-top:1px solid #1a3148;padding-top:18px;text-align:center}
+.reveal{opacity:0;transform:translateY(28px);transition:.8s}.reveal.in{opacity:1;transform:none}
+@media(max-width:960px){
+.about .grid,.cgrid{grid-template-columns:1fr}.cards,.tgrid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}
+.burger{display:block}nav{position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:18px;display:none;box-shadow:0 10px 20px rgba(0,0,0,.1)}nav.open{display:flex}}
+@media(max-width:620px){section{padding:64px 0}.cards,.tgrid,.row{grid-template-columns:1fr}.arrow{display:none}.about .photo img{height:300px}.top .wrap{justify-content:center}.cap .btn+.btn{margin:10px 0 0}form{padding:26px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><a href="tel:0425830221">📞 0425 830 221</a><a href="mailto:customshowerscreens@gmail.com">✉ customshowerscreens@gmail.com</a></div></div>
+<header><div class="wrap">
+<a class="logo" href="#top">CUSTOM <span>SHOWER</span> SCREENS</a>
+<button class="burger" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+<nav onclick="this.classList.remove('open')"><a href="#about">About</a><a href="#services">Services</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a><a class="btn" href="#contact">Free Quote</a></nav>
+</div></header>
+
+<!-- 1. SLIDER -->
+<div class="slider" id="top" aria-roledescription="carousel">
+<div id="slides"></div>
+<div class="cap"><h1>Designer Glass, Custom Made To Fit Perfectly</h1><p>Frameless shower screens, splashbacks &amp; pool fencing across Melbourne</p><a class="btn" href="#contact">Get A Free Quote</a><a class="btn ghost" href="#services">Our Services</a></div>
+<button class="arrow prev" aria-label="Previous">&#10094;</button><button class="arrow next" aria-label="Next">&#10095;</button>
+<div class="dots" id="dots"></div>
+</div>
+
+<!-- 2. ABOUT -->
+<section class="about" id="about"><div class="wrap">
+<div class="grid">
+<div class="reveal"><span class="eyebrow">/ About Us</span>
+<h2>We Build Custom Shower Screens That Increase Property Value</h2>
+<p>Custom Shower Screens has years of experience providing excellent workmanship and friendly customer service throughout Melbourne, Australia.</p>
+<p>We use high quality materials and techniques to produce quality finishes that rival show homes. Crystal-clear glass, precise measurements and minimal silicone: a look that lifts any bathroom, kitchen or pool area.</p>
+<a class="btn" href="#contact">Talk To Rolf</a></div>
+<div class="photo reveal"><img loading="lazy" src="https://customshowerscreens.com.au/wp-content/uploads/2017/09/IMG_0185.jpg" alt="Finished frameless shower screen installation in Melbourne"></div>
+</div>
+<div class="stats">
+<div class="stat reveal"><b data-n="30">0</b><span>Years of Experience</span></div>
+<div class="stat reveal"><b data-n="4000">0</b><span>Shower Screens Installed</span></div>
+<div class="stat reveal"><b data-n="400">0</b><span>Glass Pool Fencing Installed</span></div>
+<div class="stat reveal"><b data-n="3000">0</b><span>Splashbacks Installed</span></div>
+</div></div></section>
+
+<!-- 3. SERVICES -->
+<section id="services"><div class="wrap">
+<div class="head reveal"><span class="eyebrow">/ Our Services</span><h2>Glass Solutions Built For Your Home</h2></div>
+<div class="cards" id="cards"></div>
+</div></section>
+
+<div class="diy"><div class="wrap reveal"><h2>DIY SHOWER SCREEN AND GLASS POOL FENCING KITS</h2><p>"Our New DIY KITS are all accurately measured to fit perfectly everytime"</p><a class="btn" href="#contact">Let Us Check Measure &amp; Install</a></div></div>
+
+<!-- 4. TESTIMONIALS -->
+<section class="testi" id="testimonials"><div class="wrap">
+<div class="head reveal"><span class="eyebrow">/ Testimonials</span><h2>What Our Customers Say</h2></div>
+<div class="tgrid">
+<div class="t reveal"><div class="stars">★★★★★</div><p>Thanks Rolf for such a great job that looks amazing and works well.</p><strong>Luke</strong><small>Designer Pool Fencing</small></div>
+<div class="t reveal"><div class="stars">★★★★★</div><p>We can highly recommend Rolf for his supply and installations, his work is perfect every time, thank you.</p><strong>James &amp; Leanne</strong><small>Designer Splashbacks</small></div>
+<div class="t reveal"><div class="stars">★★★★★</div><p>Thanks for the good work, we have tried the shower this morning and all is well – thank you.</p><strong>Peter</strong><small>Designer Shower Screens</small></div>
+</div></div></section>
+
+<!-- 5. CONTACT -->
+<section class="contact" id="contact"><div class="wrap cgrid">
+<div class="reveal"><span class="eyebrow">/ Contact</span><h2>Book Your Check Measure &amp; Installation</h2>
+<p class="lead">For all Check Measure and Installations call Rolf Walther.</p>
+<div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div><div><h4>Phone</h4><a href="tel:0425830221">Rolf Walther – 0425 830 221</a></div></div>
+<div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><div><h4>Email</h4><a href="mailto:customshowerscreens@gmail.com">customshowerscreens@gmail.com</a></div></div>
+<div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Location</h4>Melbourne, Victoria, Australia</div></div>
+</div>
+<form id="cf" class="reveal" novalidate>
+<h3>Send Us A Message</h3>
+<div class="f"><label for="n">Your Name</label><input id="n" name="name" required autocomplete="name"></div>
+<div class="row"><div class="f"><label for="e">Email</label><input id="e" name="email" type="email" required autocomplete="email"></div>
+<div class="f"><label for="p">Phone</label><input id="p" name="phone" type="tel" required autocomplete="tel"></div></div>
+<div class="f"><label for="m">Your Message</label><textarea id="m" name="message" required></textarea></div>
+<!-- Replace data-sitekey with your own reCAPTCHA v2 key (this is Google's public test key) -->
+<div class="g-recaptcha f" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+<button class="btn" type="submit">Send Message</button>
+<div id="msg" role="status"></div>
+</form></div></section>
+
+<footer><div class="wrap">
+<div class="fg">
+<div><div class="logo" style="color:#fff">CUSTOM <span>SHOWER</span> SCREENS</div><p style="margin-top:8px;max-width:280px">Custom frameless glass, made to fit perfectly. Serving Melbourne.</p></div>
+<div><h4>Services</h4><ul><li><a href="#services">Frameless Shower Screens</a></li><li><a href="#services">Kitchen Glass Splashbacks</a></li><li><a href="#services">Frameless Pool Fencing</a></li><li><a href="#services">DIY Kits</a></li></ul></div>
+<div><h4>Call Rolf</h4><p><a href="tel:0425830221">0425 830 221</a></p></div>
+</div>
+<div class="copy">© 2026 Custom Shower Screens. All rights reserved.</div></div></footer>
+
+<script>
+const B='https://customshowerscreens.com.au/wp-content/uploads/2017/09/';
+const gallery=[['IMG_0174','Frameless shower screen'],['IMG_2063','Glass splashback'],['frameless-pool-fence','Frameless glass pool fencing'],['IMG_0185','Frameless shower screen'],['IMG_1445','Glass kitchen splashback'],['IMG_0317-2','Glass pool fence'],['IMG_0221','Frameless shower screen'],['IMG_1435','Glass splashback'],['frameless-pool-fence2','Frameless pool fencing'],['IMG_0316','Frameless shower screen'],['IMG_2061','Glass splashback'],['shower14','Frameless shower screen'],['IMG_0312','Glass pool fence'],['shower17','Frameless shower screen']];
+const S=document.getElementById('slides'),D=document.getElementById('dots');
+gallery.forEach((g,i)=>{S.insertAdjacentHTML('beforeend',`<div class="slide${i?'':' on'}"><img src="${B}${g[0]}.jpg" alt="${g[1]} by Custom Shower Screens" ${i?'loading="lazy"':''}></div>`);D.insertAdjacentHTML('beforeend',`<button aria-label="Slide ${i+1}" class="${i?'':'on'}"></button>`)});
+const sl=[...S.children],dt=[...D.children];let cur=0,tm;
+function go(n){sl[cur].classList.remove('on');dt[cur].classList.remove('on');cur=(n+sl.length)%sl.length;sl[cur].classList.add('on');dt[cur].classList.add('on')}
+function auto(){clearInterval(tm);tm=setInterval(()=>go(cur+1),5000)}
+document.querySelector('.next').onclick=()=>{go(cur+1);auto()};
+document.querySelector('.prev').onclick=()=>{go(cur-1);auto()};
+dt.forEach((d,i)=>d.onclick=()=>{go(i);auto()});
+const sv=document.querySelector('.slider');sv.onmouseenter=()=>clearInterval(tm);sv.onmouseleave=auto;auto();
+
+const services=[
+['Kitchen Glass Splashbacks','IMG_2063','Enter a new world of fashionable, stylish and smart looking glass splashbacks. Bring your kitchen or bathroom to life with the stunning, contemporary splashback finish.'],
+['Accessories and Hardware','IMG_0358','All our accessories and hardware is made to the highest standards and will last the test of time looking beautiful everyday.'],
+['Frameless Shower Screens','IMG_0174','We are the ultimate choice for custom made frameless shower screens in Melbourne. With a minimal use of silicone and with our excellent workmanship.'],
+['Frameless Shower Screens DIY Kits','shower14','Our custom frameless shower screen kits are made perfectly and will stand out from the rest with quality and finish. We also recommend our check measure and installation services for that professional finish.'],
+['Frameless Pool Fencing','frameless-pool-fence','We can provide the perfect solution in frameless pool fencing that meets all safety regulations and Australian standards.'],
+['Frameless Glass Pool Fencing DIY Kits','IMG_0312','Our custom frameless pool fencing kits are made perfectly and will stand out from the rest with quality and finish. We also recommend our check measure and installation services for that professional finish.']];
+document.getElementById('cards').innerHTML=services.map(s=>`<article class="card reveal"><div class="im"><img loading="lazy" src="${B}${s[1]}.jpg" alt="${s[0]}"></div><div class="tx"><h3>${s[0]}</h3><p>${s[2]}</p><a class="btn" href="#contact">Enquire Now</a></div></article>`).join('');
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+const n=e.target.querySelector('[data-n]');if(n&&!n.done){n.done=1;const t=+n.dataset.n;let v=0;const st=Math.ceil(t/60);const c=setInterval(()=>{v=Math.min(t,v+st);n.textContent=v.toLocaleString()+'+';if(v>=t)clearInterval(c)},25)}
+io.unobserve(e.target)}}),{threshold:.15});
+const watch=()=>document.querySelectorAll('.reveal').forEach(el=>io.observe(el));watch();
+
+document.getElementById('cf').addEventListener('submit',e=>{e.preventDefault();
+const f=e.target,m=document.getElementById('msg'),say=(t,c)=>{m.textContent=t;m.className=c};
+if(![...f.querySelectorAll('[required]')].every(x=>x.value.trim()))return say('Please complete all fields.','er');
+if(!/^\S+@\S+\.\S+$/.test(f.email.value))return say('Please enter a valid email.','er');
+if(!window.grecaptcha||!grecaptcha.getResponse())return say('Please tick the reCAPTCHA box.','er');
+// TODO: send new FormData(f) (incl. g-recaptcha-response) to your server/endpoint and verify the token server-side.
+say('Thank you! We will be in touch shortly.','ok');f.reset();grecaptcha.reset()});
+</script>
+</body>
+</html>

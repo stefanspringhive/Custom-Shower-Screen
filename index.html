@@ -60,7 +60,7 @@ section{padding:92px 0}
 .head{text-align:center;max-width:680px;margin:0 auto 52px}
 .head h2{font-size:clamp(1.7rem,3.2vw,2.6rem);color:var(--navy);margin-top:8px}
 #cards{padding:0 50px 92px}
-.svc{display:grid;grid-template-columns:1.15fr 1fr 1.15fr;min-height:500px;box-shadow:0 10px 34px rgba(11,34,57,.1)}
+.svc{display:grid;grid-template-columns:1.15fr 1fr 1.15fr;min-height:580px;box-shadow:0 10px 34px rgba(11,34,57,.1)}
 .svc+.svc{margin-top:50px}
 .svc .ph{position:relative;overflow:hidden;background:#dbe6ea;min-height:420px}
 .svc .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
@@ -69,10 +69,20 @@ section{padding:92px 0}
 .svc .ph:first-child b{left:22px}.svc .ph:last-child b{right:22px}
 .svc .mid{background:#fff;display:flex;flex-direction:column;justify-content:center;text-align:center}
 .svc:nth-child(even) .mid{background:var(--ice)}
-.svc .it{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 8%}
+.svc .it{flex:1 1 0;min-height:0;cursor:pointer;transition:background .35s;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 8%}
 .svc .it+.it{border-top:1px solid #d3e1e6}
+.num{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;font:800 1rem 'Montserrat';letter-spacing:.1em;padding:7px 16px;margin-bottom:16px;border-bottom:3px solid var(--teal)}
+.num i{font-style:normal;color:var(--teal);font-size:.8rem}
 .svc h3{color:var(--navy);font-size:1.2rem;margin-bottom:10px}
 .svc .it p{color:var(--mute);font-size:.95rem;margin-bottom:20px;max-width:420px}
+.rev{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease,opacity .4s ease;display:flex;flex-direction:column;align-items:center}
+.it.on .rev{max-height:260px;opacity:1}
+.it.on{background:#fff}.svc:nth-child(even) .it.on{background:#fff}
+.it h3{transition:color .3s}.it.on h3{color:var(--teal-d)}
+.cp{position:absolute;left:0;right:0;bottom:0;z-index:2;background:#fff;color:var(--navy);font:700 .95rem 'Montserrat';padding:16px 22px;text-align:center;border-top:4px solid var(--teal);transition:.3s}
+.ph.on .cp{background:var(--teal);color:#fff}
+.ph.on img{transform:scale(1.06)}
+@media(hover:none),(max-width:960px){.rev{max-height:none;opacity:1}.it{cursor:default}}
 /* diy band */
 .diy{background:linear-gradient(rgba(11,34,57,.88),rgba(11,34,57,.88)),url(https://customshowerscreens.com.au/wp-content/uploads/2017/09/IMG_0174.jpg) center/cover fixed;color:#fff;text-align:center;padding:84px 0}
 .diy h2{font-size:clamp(1.5rem,3vw,2.3rem);margin-bottom:14px}
@@ -115,6 +125,7 @@ footer li{list-style:none;margin-bottom:6px}footer a:hover{color:var(--teal)}
 @media(max-width:960px){
 .about .grid,.cgrid{grid-template-columns:1fr}.tgrid{grid-template-columns:1fr 1fr}.svc{grid-template-columns:1fr;min-height:0}.svc .ph{min-height:340px}.svc .ph:last-child b{right:auto;left:22px}.stats{grid-template-columns:1fr 1fr}
 .burger{display:block}nav{position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:18px;display:none;box-shadow:0 10px 20px rgba(0,0,0,.1)}nav.open{display:flex}}
+@media(max-width:960px){.num i{display:none}}
 @media(max-width:620px){#cards{padding:0 20px 64px}.svc+.svc{margin-top:28px}section{padding:64px 0}.tgrid,.row{grid-template-columns:1fr}.arrow{display:none}.about .photo img{height:300px}.top .wrap{justify-content:center}form{padding:26px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -215,10 +226,12 @@ const services=[
 ['Frameless Shower Screens DIY Kits','shower14','Our custom frameless shower screen kits are made perfectly and will stand out from the rest with quality and finish. We also recommend our check measure and installation services for that professional finish.'],
 ['Frameless Pool Fencing','frameless-pool-fence','We can provide the perfect solution in frameless pool fencing that meets all safety regulations and Australian standards.'],
 ['Frameless Glass Pool Fencing DIY Kits','IMG_0312','Our custom frameless pool fencing kits are made perfectly and will stand out from the rest with quality and finish. We also recommend our check measure and installation services for that professional finish.']];
-const ph=(x,n)=>`<div class="ph"><b>0${n}</b><img loading="lazy" src="${B}${x[1]}.jpg" alt="${x[0]}"></div>`;
-const it=x=>`<div class="it"><h3>${x[0]}</h3><p>${x[2]}</p><a class="btn" href="#contact">Enquire Now</a></div>`;
-document.getElementById('cards').innerHTML=[0,2,4].map(i=>`<div class="svc reveal">${ph(services[i],i+1)}<div class="mid">${it(services[i])}${it(services[i+1])}</div>${ph(services[i+1],i+2)}</div>`).join('');
+const ph=(x,n)=>`<div class="ph" data-s="${n}"><b>0${n}</b><span class="cp">${x[0]}</span><img loading="lazy" src="${B}${x[1]}.jpg" alt="${x[0]}"></div>`;
+const it=(x,n,l)=>`<div class="it" data-s="${n}"><div class="num">${l?'<i>&#9664;</i>':''}0${n}${l?'':'<i>&#9654;</i>'}</div><h3>${x[0]}</h3><div class="rev"><p>${x[2]}</p><a class="btn" href="#contact">Enquire Now</a></div></div>`;
+document.getElementById('cards').innerHTML=[0,2,4].map(i=>`<div class="svc reveal">${ph(services[i],i+1)}<div class="mid">${it(services[i],i+1,1)}${it(services[i+1],i+2,0)}</div>${ph(services[i+1],i+2)}</div>`).join('');
 
+document.querySelectorAll('[data-s]').forEach(el=>{const k=el.dataset.s,set=v=>document.querySelectorAll('[data-s="'+k+'"]').forEach(x=>x.classList.toggle('on',v));
+el.addEventListener('mouseenter',()=>set(true));el.addEventListener('mouseleave',()=>set(false));el.addEventListener('focusin',()=>set(true));el.addEventListener('focusout',()=>set(false))});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
 const n=e.target.querySelector('[data-n]');if(n&&!n.done){n.done=1;const t=+n.dataset.n;let v=0;const st=Math.ceil(t/60);const c=setInterval(()=>{v=Math.min(t,v+st);n.textContent=v.toLocaleString()+'+';if(v>=t)clearInterval(c)},25)}
 io.unobserve(e.target)}}),{threshold:.15});
